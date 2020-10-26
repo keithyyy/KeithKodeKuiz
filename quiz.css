@@ -1,0 +1,35 @@
+body {
+    color: black;
+}
+
+#choice-container {
+    display: flex;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    border-radius: 8px;
+    background: rgb(191, 125, 245);
+    font-size: 3rem;
+    min-width: 80rem;
+}
+
+#choice-container:hover {
+    background-color: rgb(211, 169, 245);
+}
+
+.choice-prefix {
+    padding: 2rem 2.5rem;
+    color: white;
+}
+
+.choice-text {
+    padding: 2rem;
+    width: 100%;
+}
+
+.correct {
+    background: rgb(53, 240, 118);
+}
+
+.incorrect {
+    background: rgb(255, 98, 31);
+}
