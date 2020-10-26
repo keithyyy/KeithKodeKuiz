@@ -41,3 +41,22 @@ let questions = [
         answer: 4
     },
 ]
+
+
+const MAX_QUESTIONS = 4
+
+function startGame() {
+    availableQuestions = [...questions];
+    getNewQuestion();
+
+}
+
+function getNewQuestion() {
+    if(availableQuestions.length === 0) {
+        localStorage.setItem('mostRecentScore', score)
+
+        return window.location.assign('scores.html');
+    }
+
+    
+}
