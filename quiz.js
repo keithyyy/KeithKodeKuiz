@@ -46,6 +46,7 @@ let questions = [
 
 
 const MAX_QUESTIONS = 4;
+const WRONG_CHOICE = 10; 
 
 function startGame() {
     questionCounter = 0
@@ -91,7 +92,7 @@ choices.forEach(choice => {
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if(classToApply === 'incorrect') {
-
+            lessTime(WRONG_CHOICE);
         };
 
 
@@ -115,6 +116,11 @@ function countDown() {
         timeDisplay.innerHTML = score;
         score-=1;
     }, 1000)
+}
+
+lessTime = num => {
+    score -= num;
+    timeDisplay.innerHTML = score; 
 }
 
 startGame();
