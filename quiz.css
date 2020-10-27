@@ -12,8 +12,8 @@ body {
     min-width: 80rem;
 }
 
-#choice-container:hover {
-    background-color: rgb(211, 169, 245);
+.choice-container:hover {
+    transform: scale(1.02);
 }
 
 .choice-prefix {
