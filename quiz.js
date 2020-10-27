@@ -1,5 +1,7 @@
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
+const timeText = document.querySelector('#score');
+
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -41,3 +43,66 @@ let questions = [
         answer: 4
     },
 ]
+
+
+const MAX_QUESTIONS = 4;
+
+function startGame() {
+    questionCounter = 0
+    availableQuestions = [...questions];
+    getNewQuestion();
+
+};
+
+function getNewQuestion() {
+    if(availableQuestions.length === 0) {
+        localStorage.setItem('mostRecentScore', score)
+
+        return window.location.assign('scores.html');
+    }
+
+    questionCounter++;
+
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex];
+    question.innerText = currentQuestion.question;
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number]
+    });
+
+    availableQuestions.splice(questionsIndex, 1);
+
+    acceptingAnswers = true;
+}
+
+choices.forEach(choice => {
+    choice.addEventListener('click', event => {
+        
+        if(!acceptingAnswers) {
+            return;
+        };
+
+        acceptingAnswers = false;
+        const selectedChoice = event.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+        if(classToApply === 'correct') {
+
+        };
+
+
+    selectedChoice.parentElement.classList.add(classToApply);
+
+    setTimeout(() => {
+        selectedChoice.parentElement.classList.remove(classToApply);
+        getNewQuestion()
+    }, 1000)
+
+    })
+});
+
+startGame();
