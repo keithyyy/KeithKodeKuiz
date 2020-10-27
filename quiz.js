@@ -1,11 +1,11 @@
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
-const timeText = document.querySelector('#score');
+const timeDisplay = document.querySelector('#score');
 
 
 let currentQuestion = {};
 let acceptingAnswers = true;
-let score = 0;
+let score = 100;
 let questionCounter = 0;
 let availableQuestions = [];
 
@@ -90,7 +90,7 @@ choices.forEach(choice => {
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
-        if(classToApply === 'correct') {
+        if(classToApply === 'incorrect') {
 
         };
 
@@ -105,4 +105,17 @@ choices.forEach(choice => {
     })
 });
 
+
+function countDown() {
+    setInterval(function() {
+        if(score <= 0) {
+            clearInterval(score= 0)
+        };
+
+        timeDisplay.innerHTML = score;
+        score-=1;
+    }, 1000)
+}
+
 startGame();
+countDown();
