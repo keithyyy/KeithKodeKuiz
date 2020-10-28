@@ -25,6 +25,6 @@ username.addEventListener('keyup', () => {
 
 
         localStorage.setItem('highScores', JSON.stringify(highScores));
-        window.location.assign("leaderboard.html");
+        window.location.assign("https://keithyyy.github.io/KeithKodeKuiz/leaderboard.html");
     }
 });
