@@ -17,7 +17,7 @@ Your score is based on how much time is left on the clock. So to get the best sc
 
 Once the quiz is complete, the user is able to save their score together with their name or initials for it to appear on the leaderboard. The leaderboard will show up to 10 names & scores.
 
-**You can find a link to here!** - https://keithyyy.github.io/PasswordGenerator/
+**You can find a link to here!** - https://keithyyy.github.io/KeithKodeKuiz/
 
 **Here's screenshots of the quiz in action:**
 ![QuizScreenshot1](QuizSS1.png)
